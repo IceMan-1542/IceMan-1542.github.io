@@ -60,6 +60,7 @@ function implementPreloader(): void {
 
 function implementSmoothScrolling(): void {
     const navLinks = document.querySelectorAll('.nav-links a');
+    const navHeight = document.querySelector('.vr-nav')?.clientHeight || 80;
     
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -70,8 +71,9 @@ function implementSmoothScrolling(): void {
             if (targetId.charAt(0) === '#') {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                     window.scrollTo({
-                        top: targetElement.getBoundingClientRect().top + window.pageYOffset - 80,
+                        top: targetPosition - navHeight,
                         behavior: 'smooth'
                     });
                     

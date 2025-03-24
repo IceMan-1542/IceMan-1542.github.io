@@ -213,6 +213,9 @@ h1, h2, h3, h4, h5, h6 {
                 0 0 20px rgba(0, 242, 254, 0.5);
     animation: pulse 3s infinite;
     position: relative;
+    width: 300px;
+    height: 300px;
+    aspect-ratio: 1;
 }
 
 .profile-image::before {
@@ -261,6 +264,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .profile-info {
@@ -703,34 +707,10 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: var(--transition);
     width: 48%;
     flex: 0 0 48%;
-}
-
-.equipment-description p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
-
-.equipment-images {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    gap: 1.5rem;
-    justify-content: space-between;
-    align-items: stretch;
-}
-
-.equipment-image {
-    position: relative;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: var(--transition);
-    width: 48%; /* Szerokość zmieniona na procentową */
-    flex: 0 0 48%; /* Zapobiega rozciąganiu */
+    aspect-ratio: 3/4;
 }
 
 .equipment-image:hover {
@@ -740,8 +720,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .equipment-image img {
     width: 100%;
-    height: auto; /* Zmieniona wysokość na auto */
+    height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
     transition: transform 0.5s ease;
 }
@@ -863,6 +844,17 @@ h1, h2, h3, h4, h5, h6 {
     .map-container {
         order: 2;
         margin: 1.5rem 0;
+    }
+    
+    .equipment-images {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .equipment-image {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16/9;
     }
 }
 
@@ -1405,10 +1397,8 @@ h1, h2, h3, h4, h5, h6 {
     
     .equipment-image {
         width: 100%;
-    }
-    
-    .equipment-description {
-        order: 2;
+        max-width: 100%;
+        aspect-ratio: 16/9;
     }
 }
 

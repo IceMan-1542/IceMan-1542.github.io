@@ -44,7 +44,9 @@ function implementPreloader() {
     });
 }
 function implementSmoothScrolling() {
+    var _a;
     var navLinks = document.querySelectorAll('.nav-links a');
+    var navHeight = ((_a = document.querySelector('.vr-nav')) === null || _a === void 0 ? void 0 : _a.clientHeight) || 80;
     navLinks.forEach(function (link) {
         link.addEventListener('click', function (e) {
             e.preventDefault();
@@ -52,8 +54,9 @@ function implementSmoothScrolling() {
             if (targetId.charAt(0) === '#') {
                 var targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                     window.scrollTo({
-                        top: targetElement.getBoundingClientRect().top + window.pageYOffset - 80,
+                        top: targetPosition - navHeight,
                         behavior: 'smooth'
                     });
                     // Update URL without page reload
