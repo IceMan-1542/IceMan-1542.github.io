@@ -144,6 +144,17 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
+/* Special highlight for Games tab */
+.nav-links a[href="#game"]:hover,
+.nav-links a[href="#game"].active {
+    background: linear-gradient(90deg, 
+        rgba(106, 17, 203, 0.2), 
+        rgba(37, 117, 252, 0.2));
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
 .nav-links a.active {
     font-weight: 600;
     background: linear-gradient(90deg, rgba(0, 242, 254, 0.1), transparent);
