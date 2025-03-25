@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     implementBackToTop();
     // Implement counter animation
     implementCounterAnimation();
-    // Animate skill barss
+    // Animate skill bars
     animateSkillBars();
 });
 // Handle preloader
