@@ -697,13 +697,9 @@ h1, h2, h3, h4, h5, h6 {
     flex: 1;
     min-width: 300px;
     display: flex;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
-}
-
-.equipment-image {
-    width: 100%;
-    max-width: 600px;
 }
 
 .equipment-image {
@@ -711,35 +707,15 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    width: 48%;
-    flex: 0 0 48%;
-    aspect-ratio: 3/4;
-    transform-style: preserve-3d;
+    transition: var(--transition);
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16/9;
 }
 
 .equipment-image:hover {
-    transform: translateY(-10px) rotateY(5deg);
-    box-shadow: 0 25px 50px rgba(31, 38, 135, 0.4);
-}
-
-.equipment-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, 
-        rgba(106, 17, 203, 0.3), 
-        rgba(37, 117, 252, 0.2));
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: 1;
-}
-
-.equipment-image:hover::before {
-    opacity: 1;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(31, 38, 135, 0.3);
 }
 
 .equipment-image img {
@@ -748,30 +724,21 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
     object-position: center;
     display: block;
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
-.equipment-image img.zoom-effect:hover {
-    transform: scale(1.1) rotate(1deg);
-}
-
-.image-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: white;
-    padding: 15px;
-    text-align: center;
-    font-weight: 500;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-    z-index: 2;
-}
-
-.equipment-image:hover .image-caption {
-    transform: translateY(0);
+/* Responsive adjustments for equipment images */
+@media screen and (max-width: 768px) {
+    .equipment-images {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .equipment-image {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16/9;
+    }
 }
 
 /* Contact Section */
