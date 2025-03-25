@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
     implementCounterAnimation();
     // Animate skill bars
     animateSkillBars();
+    // Add special highlight for Games tab
+    implementGamesTabHighlight();
 });
 // Handle preloader
 function implementPreloader() {
@@ -566,4 +568,25 @@ function animateSkillBars() {
     skillLevels.forEach(function (skillLevel) {
         observer.observe(skillLevel);
     });
+}
+// Add special highlight for Games tab
+function implementGamesTabHighlight() {
+    var gamesTab = document.querySelector('.nav-links a[href="#gry"]');
+    if (!gamesTab) return;
+    
+    // Add special CSS for games tab hover effect that matches other tabs
+    var style = document.createElement('style');
+    style.textContent = `
+        .nav-links a[href="#gry"]:hover {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+        }
+        
+        .nav-links a[href="#gry"].active {
+            font-weight: 600;
+            background: linear-gradient(90deg, rgba(0, 242, 254, 0.1), transparent);
+        }
+    `;
+    document.head.appendChild(style);
 }
