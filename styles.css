@@ -697,9 +697,13 @@ h1, h2, h3, h4, h5, h6 {
     flex: 1;
     min-width: 300px;
     display: flex;
-    gap: 1.5rem;
-    justify-content: space-between;
-    align-items: stretch;
+    justify-content: center;
+    align-items: center;
+}
+
+.equipment-image {
+    width: 100%;
+    max-width: 600px;
 }
 
 .equipment-image {
