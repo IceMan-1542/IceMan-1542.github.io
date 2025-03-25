@@ -32,7 +32,7 @@ function implementPreloader() {
     var preloader = document.querySelector('.preloader');
     if (!preloader)
         return;
-    // Hide preloader after page loads
+    // Hide preloader after page loadss
     window.addEventListener('load', function () {
         setTimeout(function () {
             preloader.classList.add('hidden');

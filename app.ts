@@ -46,7 +46,7 @@ function implementPreloader(): void {
     const preloader = document.querySelector('.preloader');
     if (!preloader) return;
     
-    // Hide preloader after page loads
+    // Hide preloader after page loadss
     window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.classList.add('hidden');
