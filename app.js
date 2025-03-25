@@ -24,10 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
     implementBackToTop();
     // Implement counter animation
     implementCounterAnimation();
-    // Animate skill bars
+    // Animate skill barss
     animateSkillBars();
-    // Add special highlight for Games tab
-    implementGamesTabHighlight();
 });
 // Handle preloader
 function implementPreloader() {
@@ -567,35 +565,5 @@ function animateSkillBars() {
     });
     skillLevels.forEach(function (skillLevel) {
         observer.observe(skillLevel);
-    });
-}
-// Add special highlight for Games tab
-function implementGamesTabHighlight() {
-    var gamesTab = document.querySelector('.nav-links a[href="#game"]');
-    if (!gamesTab) return;
-    
-    // Add special CSS for games tab hover effect
-    var style = document.createElement('style');
-    style.textContent = `
-        .nav-links a[href="#game"]:hover {
-            background: linear-gradient(90deg, 
-                rgba(106, 17, 203, 0.2), 
-                rgba(37, 117, 252, 0.2));
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
-            transform: translateY(-2px);
-            color: var(--accent-color);
-            text-shadow: 0 0 5px rgba(0, 242, 254, 0.7);
-            transition: all 0.3s ease;
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Add mouseenter/mouseleave effects for extra animation
-    gamesTab.addEventListener('mouseenter', function() {
-        this.style.borderBottom = '2px solid var(--accent-color)';
-    });
-    
-    gamesTab.addEventListener('mouseleave', function() {
-        this.style.borderBottom = '';
     });
 }
