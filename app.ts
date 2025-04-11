@@ -120,7 +120,7 @@ function implementParallaxEffect(): void {
 }
 
 function implementScrollSpy(): void {
-    const sections = document.querySelectorAll('.vr-section, .vr-header');
+    const sections = document.querySelectorAll('.vr-section, .vr-header, #youtube');
     const navLinks = document.querySelectorAll('.nav-links a');
     
     window.addEventListener('scroll', () => {
